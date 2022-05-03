@@ -142,7 +142,7 @@ class EmpleadoCreateView(CreateView):
         'job',
         'departamento',
         'habilidades',
-        'avatar'
+        'avatar',
         ]
     #fields = ('__all__')
     #redirecciona a SuccessView
@@ -166,14 +166,15 @@ class SuccessView(TemplateView):
 #***************************************************************
 #updateview
 class EmpleadoUpdateView(UpdateView):
-    template_name = "persona/update.html"
     model = Empleado
+    template_name = "persona/update.html"
     fields = [
         'first_name',
         'last_name',
         'job',
         'departamento',
         'habilidades',
+        'avatar'
         ]
     success_url = reverse_lazy('personas_app:empleados_admin')
 
@@ -189,6 +190,7 @@ class EmpleadoUpdateView(UpdateView):
     def form_valid(self, form):
         print ('******************************Metodo FORM_valid****************************')
         print ('***************************************************************************')
+        print (self.get_object())
         return super(EmpleadoUpdateView,self).form_valid(form)
 
 class EmpleadoDetailViewDelete(DeleteView):
