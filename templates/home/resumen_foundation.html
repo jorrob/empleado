@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Pagina de Prueba</title>
+    <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+  </head>
+  <body>
+    <h1>Resumen Foundation Prueba</h1>
+    <div class="grid-x" style="border:1px solid green;">    
+        <h2 class="cell large-5" style ="border:1px solid red;" >elemento1</h2>
+        <h2 class="cell large-3">elemento2</h2>
+        <h2 class="cell large-4"style ="border:1px solid blue;" >elemento3</h2>
+    
+        <div class="cell large-5 grid-x" style="border:1px solid black;">
+            <h2 class="cell large-6"> otro elemento 1 </h2>
+            <h2 class="cell large-6"> otro elemento 2 </h2>
+            <h2 class="cell"> otro elemento 3 </h2>
+        </div>
+    </div>
+  </body>
+</html>

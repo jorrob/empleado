@@ -1,0 +1,114 @@
+
+#correr con la configuracion especifica
+./manage.py runserver --setting  empleado.settings.local
+# o tambien editar archivo manage.py
+./manage.py runserver
+
+#creamos la app
+django-admin startapp departamento
+
+#creamos la carpeta template al nivel del proyecto en el manage.py
+#para ello es necesario instalar 
+pip install unipath
+
+#ORM capa previa a escribir sql
+
+#interaccion con la base de datos es archivo model.py
+
+
+#para que se ejecute el modelo en la terminarl ejecutamos:
+manage.py makemigrations
+manage.py migrate
+
+#para ver los datos registrados entremos a home/admin.py
+
+#configurar base de datos
+
+ssh postgres@192.168.180.135
+pass:12345678
+
+psql postgres
+psql (12.9 (Ubuntu 12.9-0ubuntu0.20.04.1))
+Type "help" for help.
+
+postgres=# CREATE DATABASE dbempleado;
+ERROR:  database "dbempleado" already exists
+postgres=# \c dbempleado
+You are now connected to database "dbempleado" as user "postgres".
+dbempleado=# ALTER ROLE django WITH PASSWORD '12345678'
+dbempleado-# ;
+ALTER ROLE
+dbempleado=# 
+
+
+#conecta django con la base 
+
+#instalar complementos para conectarse a plsq
+pip install psycopg2-binary
+
+
+#creacion de vistas
+https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/
+
+
+#listview 
+https://ccbv.co.uk/projects/Django/3.0/django.views.generic.list/ListView/
+
+postgres=# CREATE DATABASE dbmaylo02;
+ERROR:  database "dbempleado" already exists
+postgres=# \c dbmaylo02
+You are now connected to database "dbempleado" as user "postgres".
+dbempleado=# ALTER ROLE django WITH PASSWORD '12345678'
+dbempleado-# ;
+ALTER ROLE
+dbempleado=# 
+
+CREATE DATABASE dbmaylo02;
+\c dbmaylo02
+create user maylo with encrypted password '12345678';
+grant all privileges on database dbmaylo02 to maylo;
+
+################################################################
+#GIT
+#inicializar el proyecto
+git init
+
+#visualizar los archivos que estamos trabajando 
+git status
+
+#usuario global
+git config --global user.email "jorgitorob202@gmail.com"
+git config --global user.name "jorrob"
+
+
+#snapshot codigo
+git commit
+
+#verificar log de GIT
+git log
+
+#descartar los cambios
+git checkout -- <archivo>
+
+#ver diferencias de archivos
+git diff noteas.txt
+
+
+#crear un archivo o carpeta que ignore git
+.gitignore
+#ahi puedo agregar las carpetas o archivos a ser ignorados
+
+#ver que tipo de version es esta, para poder crear versiones alternativas
+git branch
+
+#puedo crear una version que tengo login
+git branch login
+
+#me cambio a login
+git checkout login
+
+#subir a GitHub
+git push -u origin main
+
+#remover un repositorio 
+git remote rm origin

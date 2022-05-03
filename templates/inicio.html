@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{% load static %}
+{%block title%}
+Pagina de inicio Sistema de Empleados
+{%endblock title%}
+
+{%block content%}
+
+{%include 'includes/header.html'%}
+
+{% comment %} Inicio de imagen de Portada {% endcomment %}
+<!-- This demo uses flex grid but you can use float grid too -->
+
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+        <div class="orbit-wrapper">
+            <div class="orbit-controls">
+                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+                <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+            </div>
+                <ul class="orbit-container">
+                    <li class="is-active orbit-slide">
+                        <figure class="orbit-figure">
+                            <img class="orbit-image" src="{%static 'img/01.jpg'%}" alt="Space">
+                            <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+                        </figure>
+                    </li>
+                    <li class="orbit-slide">
+                        <figure class="orbit-figure">
+                            <img class="orbit-image" src="{%static 'img/02.jpg'%}" alt="Space">
+                            <figcaption class="orbit-caption">Lets Rocket!</figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  
+<!--  BLOQUE DE BIENVENIDA  -->
+<div class="grid-x align-center">
+    <h1 class="cell large-8" style="font-size:20px; text-align:center">
+        Bienvenidos al sistema de Registro de Empleados
+    </h1>
+    <div class="cell large-7">
+        <!-- Fundation Container Callout-->
+        <div class="callout success">
+            <h5>Registro y Control de Empleados</h5>
+            <p>Pruebas de funcionameinto</p>
+            <a href="#">Funcionamiento</a>
+        </div>
+        
+    </div>
+</div>
+
+<!--  FIN DE  BLOQUE DE BIENVENIDA  -->
+
+{%endblock content%}

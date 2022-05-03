@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+<h1>Lista de todos los empleados por area metodo GET</h1>
+
+{% block title %}
+    Departamento
+{% endblock title %}
+
+{% block content %}   
+{%include "includes/header.html" %}
+
+    <div class="grid-container">
+        <div class="grid-x">
+            <h1 class="cell">Lista de Empleados Por Departamento</h1>
+            <div class="cell">
+                <table>
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>NOMBRES</th>
+                        <th>APELLIDOS</th>
+                        <th>DEPARTAMETO</th>
+                        <th>ACCION</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for e in empleados%}
+                                <tr>
+                                    <td>{{ e.id }}</td>
+                                    <td>{{ e.first_name }}</td>
+                                    <td>{{ e.last_name }}</td>    
+                                    <td>{{ e.departamento }}</td>    
+                                    <td><a class="button warning" href="">Ver</a></td>    
+                                        
+                                </tr>    
+                            {%endfor%}  
+                        </tbody>
+                <table>
+            </div>
+        <div>
+    </div>
+{% endblock content %}
+

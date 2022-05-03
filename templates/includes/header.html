@@ -1,0 +1,21 @@
+{% comment %} {% load static %} {% endcomment %}
+<div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Empleados</li>
+        <li>
+          {% comment %} <a href="listar-todo-empleados/">Listar</a> {% endcomment %}
+          <a href="{% url 'personas_app:empleados_all' %}">Listar</a>
+          
+        </li>
+        <li><a href="{% url 'departamento_app:listar-departamento' %}">Departamento</a></li>
+        <li><a href="{% url 'personas_app:empleados_admin' %}">Administrar</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="search" placeholder="Buscar Empleado"></li>
+        <li><a class="button" href="{% url 'personas_app:empleado_add' %}">Registrar Empleado</a></li>
+      </ul>
+    </div>
+  </div>

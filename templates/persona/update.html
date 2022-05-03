@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Actualizar Empleados
+{% endblock title %}
+
+{% block content %}   
+{%include "includes/header.html" %}
+
+
+    <h1>Actualizar Datos de Empleados</h1>
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell">
+                <form class="grid-x grid-margin-x" method="POST"> {% csrf_token %}
+                    <div class="cell large-6">
+                        <label>Nombres
+                          {{ form.first_name }}
+                        </label>
+                    </div>
+                    <div class="cell large-6">
+                        <label>Apellidos
+                          {{ form.last_name }}
+                        </label>
+                    </div>
+                    <div class="cell large-6">
+                        <label>Trabajo
+                          {{ form.job }}
+                        </label>
+                    </div>
+                    <div class="cell large-6">
+                        <label>Departamento
+                          {{ form.departamento }}
+                        </label>
+                    </div>
+                    <div class="cell large-6">
+                        <label>Habilidades
+                          {{ form.habilidades }}
+                        </label>
+                    </div>
+                                       
+                        {% comment %} <td>{{ form.as_p }}</td> {% endcomment %}
+                    <div class="cell">
+                        <label>
+                            <button class="submit success button" type="submit">Actualizar</button>
+                        </label>
+                    </div>
+                               
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

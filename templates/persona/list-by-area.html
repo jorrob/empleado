@@ -1,0 +1,8 @@
+<h1>Lista de todos los empleados por departamento </h1>
+<url>
+    {% for e in object_list%}
+        <li>
+            {{ e }}
+        </li>
+    {%endfor%}
+</url>
