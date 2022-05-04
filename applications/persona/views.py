@@ -19,6 +19,7 @@ class InicioView(TemplateView):
 
 #1 listar todos los empreados de la empresa
 from .models import Empleado
+from .form import EmpleadoForm 
 
 #listar todos los empleados
 class ListAllEmpleados(ListView):
@@ -136,14 +137,7 @@ class EmpleadoDetailView(DetailView):
 class EmpleadoCreateView(CreateView):
     model = Empleado
     template_name = "persona/add.html"
-    fields = [
-        'first_name',
-        'last_name',
-        'job',
-        'departamento',
-        'habilidades',
-        'avatar',
-        ]
+    form_class = EmpleadoForm
     #fields = ('__all__')
     #redirecciona a SuccessView
     success_url = reverse_lazy('personas_app:empleados_admin')
@@ -168,14 +162,7 @@ class SuccessView(TemplateView):
 class EmpleadoUpdateView(UpdateView):
     model = Empleado
     template_name = "persona/update.html"
-    fields = [
-        'first_name',
-        'last_name',
-        'job',
-        'departamento',
-        'habilidades',
-        'avatar'
-        ]
+    form_class = EmpleadoForm
     success_url = reverse_lazy('personas_app:empleados_admin')
 
     #interseptar el proceso antes de que se guarden los datos

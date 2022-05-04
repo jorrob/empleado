@@ -1,45 +1,39 @@
 {% extends 'base.html' %}
+{% load static%}
 
 {% block title %}
-    Detalle de Empleado
+   {{object.last_name}}
 {% endblock title %}
 
 {% block content %}   
 {%include "includes/header.html" %}
-
     <div class="grid-container">
-        <div class="grid-x">
-            <h1>
-                Detalle de Empleado
-            </h1>
-            <div class="cell">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOMBRES</th>
-                        <th>APELLIDOS</th>
-                        <th>DEPARTAMETO</th>
-                    
-                    </tr>
-                    </thead>
-                    <tbody>{{empleados}}
-                        
-                            <tr>
-                                <td>{{empleado.id}}</td>
-                                <td>{{empleado.first_name}}</td>
-                                <td>{{empleado.last_name}}</td>
-                                <td>{{empleado.departamento}}</td>
-                                
-                                {% comment %} <td><a class="button warning" href="{% url 'personas_app:empleado_detalle' e.id%}">Ver</a></td> {% endcomment %}
-                            </tr>
-                        
-                    
-                    </tbody>
-                </table>
-            </div>
+        <div class="grid-x grid-margin-x">
+             {% comment %} foundation zurb card {% endcomment %}
+            <div class="cell large-4 card " style="width: 300px; margin-top:10px">
+                <div class="card-divider">
+                    {{object.first_name}} {{object.last_name}}
+                </div>
+                
+                {% if empleado.avatar %}
+                    <img src="{{ empleado.avatar.url }} ">
+                {% else %}
+                    <img src="{% static 'img/desconocido.jpg' %} "> 
+                {% endif %}
+                <div class="card-section" >
+                    <h4>{{empleado.first_name}} {{empleado.last_name}}</h4>
+                    <p>{{empleado.departamento.shortname}}</p>
+                    <p><span class="label"> Habilidades</span></p>
+                    <ul class="vertical menu">
+                        {%for h in empleado.habilidades.all %}
+                            <li>{{h.habilidad }}</li>
+                        {%endfor %}
+                    </ul>
+                </div>
+            </div> 
         </div>
     </div>
+
 {% endblock content %}
     {% comment %} {{empleados}}
 <h3>Todos los datos</h3>
