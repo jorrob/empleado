@@ -20,6 +20,9 @@ pip install unipath
 manage.py makemigrations
 manage.py migrate
 
+#ejecutar manage con otro archivo
+./manage.py runserver --settings empleado.settings.local1
+
 #para ver los datos registrados entremos a home/admin.py
 
 #configurar base de datos
